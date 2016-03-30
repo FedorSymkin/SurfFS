@@ -8,7 +8,7 @@ It creates read-only folder structure where each directory corresponds to one ht
 - file url - url of page (without protocol)
 - file status - "ok" / "error" depending on http loading status
 - file loading.log - some information about loading html page. This file contains error messages in case of http loading failed. It also contains description of each html link: whether it was added or skipped
-- subdirectory for each <a> html element. Name of directory generated from link title (ascii control symbols are replaced with spaces. All data in <> brackets within title ignored). If directory points to page which already been pointed from another directory, symlink to another directory will be created.
+- subdirectory for each html < a > element. Name of directory generated from link title (ascii control symbols are replaced with spaces. All data in <> brackets within title ignored). If directory points to page which already been pointed from another directory, symlink to another directory will be created.
 
 Surffs was developed just for fun and self-education purpose, so it has some limitaions:
 - only http protocol supported (no https)
@@ -18,6 +18,7 @@ Surffs was developed just for fun and self-education purpose, so it has some lim
 - there is no memory limitation for web pages cache in surffs. Memory used for web pages will be freed only when module surffs will be removed from kernel (rmmod surffs.ko)
 - if page once cannot be loaded it will be not available all time till remounting file system
 - surffs does not protect multithreading operations, so simultaneous operating with several instances of surffs may cause undefined behaviour
+- html links in format of < link > element or < a href="..." title="..." > are not processed
 
 **Building:**
 
