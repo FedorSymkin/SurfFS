@@ -12,7 +12,7 @@ extern int sfs_log_nesting;
 #define SURFFS_LOGLEVEL_INFO        3
 #define SURFFS_LOGLEVEL_DEBUG       4
 #define SURFFS_LOGLEVEL_TRACE       5
-#define SURFFS_CURRENT_LOGLEVEL     SURFFS_LOGLEVEL_TRACE
+#define SURFFS_CURRENT_LOGLEVEL     SURFFS_LOGLEVEL_ERROR
 
 #define sfs_print_log(level, tag, fmt, ...) { \
             if (SURFFS_CURRENT_LOGLEVEL >= level) { \
